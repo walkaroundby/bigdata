@@ -12,7 +12,7 @@ public class DevelopApp {
     public static List<DeployThread> getDeployAppList() {
         List<DeployThread> deployThreadList = new ArrayList<DeployThread>();
         String env = "dev";
-        deployThreadList.add(new DeployThread(env, "dev-webapp"));
+//        deployThreadList.add(new DeployThread(env, "dev-webapp"));
         deployThreadList.add(new DeployThread(env, "test-transfer-one2"));
         deployThreadList.add(new DeployThread(env, "test-transfer-three"));
         deployThreadList.add(new DeployThread(env, "test-transfer-one4"));
@@ -31,6 +31,18 @@ public class DevelopApp {
         deployThreadList.add(new DeployThread(env, "jenkins8"));
         deployThreadList.add(new DeployThread(env, "jenkins9"));
         deployThreadList.add(new DeployThread(env, "jenkins10"));
+        deployThreadList.add(new DeployThread(env, "jenkins11"));
+        deployThreadList.add(new DeployThread(env, "jenkins12"));
+        deployThreadList.add(new DeployThread(env, "jenkins13"));
+        deployThreadList.add(new DeployThread(env, "jenkins14"));
+        deployThreadList.add(new DeployThread(env, "jenkins15"));
+        deployThreadList.add(new DeployThread(env, "jenkins16"));
+        deployThreadList.add(new DeployThread(env, "jenkins17"));
+        deployThreadList.add(new DeployThread(env, "jenkins18"));
+        deployThreadList.add(new DeployThread(env, "jenkins19"));
+        deployThreadList.add(new DeployThread(env, "jenkins20"));
+
+
         return deployThreadList;
     }
 }

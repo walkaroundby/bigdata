@@ -41,7 +41,7 @@ public class DebugApp {
         deployThreadList.add(new DeployThread(env, "jenkins-ios6"));
         deployThreadList.add(new DeployThread(env, "jenkins-ios7"));
 
-        deployThreadList.add(new DeployThread(env, "branch-sdp-webapp"));
+//        deployThreadList.add(new DeployThread(env, "branch-sdp-webapp"));
         return deployThreadList;
     }
 }

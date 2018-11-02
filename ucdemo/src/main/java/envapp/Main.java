@@ -21,7 +21,7 @@ public class Main {
                     poolExecutor.submit(deployThread);
                 }
             }
-        }, 0,30, TimeUnit.SECONDS);
+        }, 0,45, TimeUnit.SECONDS);
     }
     public static List<DeployThread> getDevApp(){
         return DevelopApp.getDeployAppList();
