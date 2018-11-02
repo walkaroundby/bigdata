@@ -10,8 +10,8 @@ import java.util.concurrent.*;
 public class Main {
 
     public static void main(String[] args) {
-        final List<DeployThread> deployThreadList = getDevApp();
-//        final List<DeployThread> deployThreadList = getDebugApp();
+//        final List<DeployThread> deployThreadList = getDevApp();
+        final List<DeployThread> deployThreadList = getDebugApp();
         final ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(10,32,
                 30, TimeUnit.SECONDS,new SynchronousQueue<Runnable>());
         ScheduledExecutorService pool = Executors.newScheduledThreadPool(2);
