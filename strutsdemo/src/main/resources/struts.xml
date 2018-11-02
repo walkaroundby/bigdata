@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="xxxx" extends="struts-default" namespace="/">
+    	<action name="login" class="action.HelloAction" method="login">
+			<result name="success">next</result>
+            <result name="failed" type="redirectAction">next</result>
+        </action>
+		<action name="next" class="action.HelloAction" method="next">
+			<result name="next">/success.jsp</result>
+		</action>
+    </package> 
+</struts>
