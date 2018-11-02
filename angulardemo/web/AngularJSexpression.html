@@ -1,0 +1,19 @@
+<html>
+<title>AngularJS 表达式</title>
+<head>
+    <title>Angular JS Controller</title>
+    <meta charset="utf-8">
+
+</head>
+<body>
+<h1>Angular字符串、数字、数组、对象初始化和表达式</h1>
+<div ng-app="" ng-init="quantity=1;cost=30; student={firstname:'李',lastname:'刚',rollno:101};marks=[82,91,78,77,64]">
+    <p>Hello {{student.firstname + " " + student.lastname}}!</p>
+    <p>Expense on Books : {{cost * quantity}} Rs</p>
+    <p>Roll No: {{student.rollno}}</p>
+    <p>Marks(Math): {{marks[3]}}</p>
+    <p>总价： {{ quantity * cost }}</p>
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="双向绑定">
+
+    <form name="myForm" ng-init="myText = 'test@runoob.com'">
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <p>编辑邮箱地址，查看状态的改变。</p>
+        <h1>状态</h1>
+        <p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+        <p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
+        <p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+    </form>
+
+    <br><br><br>
+
+    名字: <input ng-model="name" >
+    <h3>你输入了: {{name}}</h3>
+    <h2>双向绑定，在修改输入域的值时， AngularJS 属性的值也将修改。</h2>
+
+<br><br><br>
+
+    <form ng-app="" name="myForm">
+        输入你的名字:
+        <input name="needName" ng-model="myTexts" required>
+    </form>
+    <h2>编辑文本域，不同状态背景颜色会发生变化。为空时背景颜色不为白</h2>
+</div>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('双向绑定', function($scope) {
+        $scope.name = "John Doe";
+    });
+</script>
+
+
+</body>
+</html>

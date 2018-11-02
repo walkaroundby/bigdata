@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div  ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}];quantity=1;price=45;nameArray=['a','b','c']">
+    <h2>使用ng-repeat循环数组:</h2>
+    <ul>
+        <li ng-repeat="x in nameArray">
+            {{ x}}</li>
+    </ul>
+
+
+    <h2>使用ng-repeat循环对象数组:</h2>
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.name + ', ' + x.country }}</li>
+    </ul>
+
+</div>
+
+<div>
+    <h2>数据绑定demo:价格计算器</h2>
+
+    数量： <input type="number" ng-model="quantity">
+    价格： <input type="number" ng-model="price">
+
+    <p><b>总价：</b> {{ quantity * price }}</p>
+</div>
+
+<div runoob-directive></div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            restrict : "A",
+            template : "<h1>创建自定义指令!</h1>"
+        };
+    });
+</script>
+<p><strong>注意：</strong> 通过设置 <strong>restrict</strong> 属性值为 "A" 来设置指令只能通过 HTML 元素的属性来调用。</p>
+
+
+</body>
+</html>

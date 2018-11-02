@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+<script src="namesController.js"></script>
+
+<body ng-app="myApp">
+<h2>currency 过滤器将数字格式化为货币格式：</h2>
+<div ng-controller="costCtrl">
+    数量: <input type="number" ng-model="quantity">
+    价格: <input type="number" ng-model="price">
+    <p>总价 = {{ (quantity * price) | currency }}</p>
+</div>
+<br><br><br>
+
+<h2>向指令添加过滤器，以ng-repeat为例</h2>
+<div ng-controller="namesCtrl">
+    <ul>
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+<br><br><br>
+<h2>输入过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中，该过滤器后跟一个冒号和一个模型名称。</h2>
+<div ng-controller="namesCtrl">
+    <p>输入过滤:</p>
+    <p><input type="text" ng-model="test"></p>
+    <ul>
+        <li ng-repeat="x in names | filter:test | orderBy:'country'">
+            {{ (x.name | uppercase) + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+<br><br><br>
+
+<h2>自定义过滤器。以下实例自定义一个过滤器 reverse，将字符串反转：</h2>
+
+<div ng-controller="myCtrl">
+    姓名: {{ msg | reverse }}
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+        $scope.msg = "Runoob";
+    });
+
+    app.controller('costCtrl', function($scope) {
+        $scope.quantity = 1;
+        $scope.price = 9.99;
+    });
+
+    app.controller('namesCtrl', function($scope) {
+        $scope.names = [
+            {name:'Jani',country:'Norway'},
+            {name:'Hege',country:'Sweden'},
+            {name:'Kai',country:'Denmark'}
+        ];
+    });
+
+    app.filter('reverse', function() { //可以注入依赖
+        return function(text) {
+            return text.split("").reverse().join("");
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

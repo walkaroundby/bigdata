@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div  ng-controller="myCtrl">
+    <input ng-model="name">
+    <h1>{{greeting}}</h1>
+    <button ng-click='sayHello()'>点我</button>
+</div>
+
+
+
+<p>当你修改输入框中的值时，会影响到模型(model)，模型中的值被修改了，控制器调用方法后才体现出来修改的情况，这个需要点击，不是双向绑定实时显示。</p>
+<br><br><br>
+
+<div ng-controller="myCtrl">
+
+    <h1>姓氏为 {{lastname}} 家族成员:</h1>
+
+    <ul>
+        <li ng-repeat="x in names">{{x}} {{lastname}}</li>
+    </ul>
+
+</div>
+<p>注意 $rootScope 在循环对象内外都可以访问。</p>
+<p>两个div中的ng-app统一写到body中</p>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $rootScope) {
+        $scope.name = "Runoob";
+        $scope.names = ["Emil", "Tobias", "Linus"];
+        $rootScope.lastname = "Refsnes";
+
+        $scope.sayHello = function() {
+            $scope.greeting = 'Hello ' + $scope.name + '!';
+        };
+
+
+    });
+</script>
+
+
+</body>
+</html>
