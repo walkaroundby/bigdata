@@ -6,9 +6,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"hello"})
 public class Application {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
@@ -25,7 +27,10 @@ public class Application {
 			repository.save(new Customer("Kim", "Bauer"));
 			repository.save(new Customer("David", "Palmer"));
 			repository.save(new Customer("Michelle", "Dessler"));
-
+			repository.save(new Customer("Chloe", "O'Brian"));
+			repository.save(new Customer("Chloe", "O'Brian"));
+			repository.save(new Customer("Chloe", "O'Brian"));
+			repository.save(new Customer("Chloe", "O'Brian"));
 //			// fetch all customers
 //			log.info("Customers found with findAll():");
 //			log.info("-------------------------------");
