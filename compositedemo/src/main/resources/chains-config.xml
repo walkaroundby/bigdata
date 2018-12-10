@@ -1,0 +1,7 @@
+<catalog>
+	<chain name="basic">
+		<command className="chain.ChainLoader1Command"/>
+		<command className="chain.ChainLoader2Command"/>
+		<command className="chain.ChainLoader3Command"/>
+	</chain>
+</catalog>
