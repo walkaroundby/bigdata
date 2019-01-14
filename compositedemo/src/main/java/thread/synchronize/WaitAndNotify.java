@@ -1,4 +1,4 @@
-package thread;
+package thread.synchronize;
 
 /**
  * 执行结果：
