@@ -1,6 +1,6 @@
 package com.executor;
 
-import com.annotation.SdpServiceHandler;
+import com.annotation.ServiceHandler;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,10 +56,10 @@ public class HandlerProxy {
             T handler = entry.getValue();
             LOG.info("find handler with name:{},class is:{}", entry.getKey(), handler.getClass());
 
-        	SdpServiceHandler sdpServiceHandler = AnnotationUtils.findAnnotation(handler.getClass(), SdpServiceHandler.class);
-        	String sdpHandlerType = sdpServiceHandler.value();
+            ServiceHandler serviceHandler = AnnotationUtils.findAnnotation(handler.getClass(), ServiceHandler.class);
+        	String handlerType = serviceHandler.value();
 
-        	if(StringUtils.equals(sdpHandlerType, type)){
+        	if(StringUtils.equals(handlerType, type)){
         		LOG.info("get handler for type:{},the class is:{}", type, handler.getClass());
         		t = handler;
         		break;

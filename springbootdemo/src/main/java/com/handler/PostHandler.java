@@ -15,6 +15,7 @@ public interface PostHandler {
      * xx
      * @param appName
      * @param params
+     * @return
      * @throws Exception
      */
     JSONObject doPost(String appName, JSONObject params) throws Exception;

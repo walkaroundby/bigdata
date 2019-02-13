@@ -12,8 +12,6 @@ import com.handler.PostHandler;
 import com.handler.PutHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 /**
@@ -190,9 +188,9 @@ public class BaseExecutor implements Executor {
      * @param userInfo
      */
     private void validateUserInfo(String type, Class handler, UserInfo userInfo) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        userInfo = (UserInfo) authentication.getPrincipal();
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//
+//        userInfo = (UserInfo) authentication.getPrincipal();
 
         if(userInfo.getUserId()!= "262337"){
             throw new PermissionException(type, handler);
