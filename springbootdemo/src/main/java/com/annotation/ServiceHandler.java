@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface SdpServiceHandler {
+public @interface ServiceHandler {
     String value() default "";
 }

@@ -46,7 +46,7 @@ public class AuthorizationUtil {
 		String path = uri.getPath();
 		String domain = uri.getHost();
 		String host = domain;
-		String url = "http://aqapi.101.com/v0.93/tokens";
+		String url = "http://aqapi.101.com/v1.0/tokens";
 		HttpPost httpPost = new HttpPost( url);
 		final String ACCEPT = "Accept";
 		final String HOST = "Host";
