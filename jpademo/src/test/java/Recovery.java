@@ -27,7 +27,7 @@ public class Recovery {
 //            e.printStackTrace();
 //        }
 //        System.out.println(id_orgIdMap);
-        String sql = "select acc from com.nd.esp.statistics.training.sys.entity.SysAccount acc join FETCH  acc.organization o where 1=1  and acc.role.id = :roleId  and ((o.id like '11%' and o.type=3) or (o.parentId like '11%' and o.type=4) or (o.id like '11%' and o.type=2)) and o.id != '111111110000' and acc.status in (4,5)  and find_in_set ('110000000000', o.parents_id)  and acc.status != :removeStatus  order by acc.updateTime desc";
+        String sql = "select acc from SysAccount acc join FETCH  acc.organization o where 1=1  and acc.role.id = :roleId  and ((o.id like '11%' and o.type=3) or (o.parentId like '11%' and o.type=4) or (o.id like '11%' and o.type=2)) and o.id != '111111110000' and acc.status in (4,5)  and find_in_set ('110000000000', o.parents_id)  and acc.status != :removeStatus  order by acc.updateTime desc";
         System.out.println(sql.indexOf("find"));
     }
 }
